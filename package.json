@@ -10,7 +10,8 @@
     },
     "dependencies": {
       "express": "^4.18.2",
-      "helmet": "^7.1.0"
+      "helmet": "^7.1.0",
+      "lodash": "4.17.20"  // 🚨 Vulnerable Version (CVE-2021-23337)
     },
     "devDependencies": {
       "eslint": "^8.51.0"
