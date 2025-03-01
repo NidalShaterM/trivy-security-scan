@@ -75,6 +75,22 @@ jobs:
           severity: 'CRITICAL,HIGH'
           ignore-unfixed: true
           exit-code: 1
+      
+      - name: Run Trivy Secret Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'  # Scan the filesystem instead of an image
+          scan-ref: '.'  # Scan the entire repository
+          scanners: 'secret'
+          exit-code: 1
+
+      - name: Run Trivy Configuration Scan (Kubernetes Security)
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          scan-ref: '.'
+          scanners: 'config'
+          exit-code: 1  # Fail if misconfigurations are found
 
       - name: Push Docker Image
         run: |
