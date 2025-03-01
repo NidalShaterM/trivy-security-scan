@@ -22,9 +22,9 @@ jobs:
         run: |
           docker build -t my-test-image .
 
-      - name: Run Trivy Scan
+      - name: Run Trivy Scan on Public Image (nginx:latest)
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'my-test-image'
+          image-ref: 'nginx:latest'
           format: 'table'
           severity: 'CRITICAL,HIGH'
