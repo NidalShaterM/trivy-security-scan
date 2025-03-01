@@ -79,9 +79,10 @@ jobs:
       - name: Run Trivy Secret Scan
         uses: aquasecurity/trivy-action@master
         with:
-          scan-ref: '.'
+          scan-type: 'fs'  # Scan the filesystem instead of an image
+          scan-ref: '.'  # Scan the entire repository
           scanners: 'secret'
-          exit-code: 1  # Fail if secrets are found
+          exit-code: 1
 
       - name: Push Docker Image
         run: |
