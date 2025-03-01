@@ -28,6 +28,6 @@ jobs:
           image-ref: 'nginx:latest'
           format: 'table'
           severity: 'CRITICAL,HIGH'
-          ignorefile: '.trivyignore'
+          trivyignores: '.trivyignore'
           ignore-unfixed: true  # Ignore issues without a known fix
           exit-code: '1'
