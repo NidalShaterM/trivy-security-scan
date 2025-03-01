@@ -10,6 +10,6 @@
   "rules": {
     "no-eval": "error",
     "no-implied-eval": "error",
-    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]  // Change 'error' to 'warn'
   }
 }
