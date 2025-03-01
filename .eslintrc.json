@@ -1,0 +1,12 @@
+{
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "no-eval": "error",
+      "no-implied-eval": "error",
+      "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+    }
+  }
+  
