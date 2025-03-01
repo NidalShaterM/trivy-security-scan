@@ -84,6 +84,14 @@ jobs:
           scanners: 'secret'
           exit-code: 1
 
+      - name: Run Trivy Configuration Scan (Kubernetes Security)
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          scan-ref: '.'
+          scanners: 'config'
+          exit-code: 1  # Fail if misconfigurations are found
+
       - name: Push Docker Image
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ env.IMAGE_TAG }}
