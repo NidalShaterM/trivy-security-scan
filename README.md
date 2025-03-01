@@ -1,1 +1,1 @@
-# trivy-scurity-scan
+# trivy-security-scan
